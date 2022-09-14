@@ -1,0 +1,2 @@
+rootProject.name = "FaceFilterWithML"
+include ':app'
