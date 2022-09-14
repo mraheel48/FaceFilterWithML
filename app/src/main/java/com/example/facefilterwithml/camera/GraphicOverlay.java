@@ -3,6 +3,7 @@ package com.example.facefilterwithml.camera;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.google.android.gms.vision.CameraSource;
@@ -131,6 +132,7 @@ public class GraphicOverlay extends View {
      */
     public void setCameraInfo(int previewWidth, int previewHeight, int facing) {
         synchronized (mLock) {
+            Log.d("myCamera",String.valueOf(previewWidth));
             mPreviewWidth = previewWidth;
             mPreviewHeight = previewHeight;
             mFacing = facing;

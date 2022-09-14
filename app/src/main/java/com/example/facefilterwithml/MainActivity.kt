@@ -129,6 +129,7 @@ class MainActivity : AppCompatActivity() {
                 "Face detector dependencies are not yet available."
             )
         }
+
         mCameraSource = CameraSource.Builder(context, detector)
             .setRequestedPreviewSize(640, 480)
             .setFacing(CameraSource.CAMERA_FACING_FRONT)
