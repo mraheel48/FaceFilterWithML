@@ -19,7 +19,7 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
     private static final float GENERIC_POS_OFFSET = 20.0f;
     private static final float GENERIC_NEG_OFFSET = -20.0f;
 
-    private static final float BOX_STROKE_WIDTH = 5.0f;
+    private static final float BOX_STROKE_WIDTH = 2.0f;
 
     private static final int COLOR_CHOICES[] = {
             Color.BLUE,
@@ -59,7 +59,7 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
         mBoxPaint.setColor(selectedColor);
         mBoxPaint.setStyle(Paint.Style.STROKE);
         mBoxPaint.setStrokeWidth(BOX_STROKE_WIDTH);
-        bitmap = BitmapFactory.decodeResource(getOverlay().getContext().getResources(), R.drawable.op);
+        bitmap = BitmapFactory.decodeResource(getOverlay().getContext().getResources(), R.drawable.snap);
         op = bitmap;
     }
 
@@ -67,15 +67,13 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
         mFaceId = id;
     }
 
-
     /**
      * Updates the face instance from the detection of the most recent frame.  Invalidates the
      * relevant portions of the overlay to trigger a redraw.
      */
     void updateFace(Face face) {
         mFace = face;
-        op = Bitmap.createScaledBitmap(bitmap, (int) scaleX(face.getWidth()),
-                (int) scaleY(((bitmap.getHeight() * face.getWidth()) / bitmap.getWidth())), false);
+        op = Bitmap.createScaledBitmap(bitmap, (int) scaleX(face.getWidth()), (int) scaleY(((bitmap.getHeight() * face.getWidth()) / bitmap.getWidth())), false);
         postInvalidate();
     }
 

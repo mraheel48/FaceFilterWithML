@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class GraphicOverlay extends View {
+
     private final Object mLock = new Object();
     private int mPreviewWidth;
     private float mWidthScaleFactor = 1.0f;
@@ -25,6 +26,7 @@ public class GraphicOverlay extends View {
      * graphics element.  Add instances to the overlay using {@link GraphicOverlay#add(Graphic)}.
      */
     public static abstract class Graphic {
+
         private GraphicOverlay mOverlay;
 
         public Graphic(GraphicOverlay overlay) {
